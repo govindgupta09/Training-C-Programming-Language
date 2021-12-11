@@ -1,0 +1,219 @@
+     // cocepts of structures, DMA and SMA, union and Enumerators.
+
+/*
+--> Structures.
+> Structure is a way to group variables.
+> It is a collection of dissimilar elements.
+> Defining structures means creating new data type.
+   >>>> Syntex of structure.
+   struct tag         // tag is any name you wants.
+   {
+       //variables declaration here.
+   };
+*/
+
+             // Uses of structures..
+             
+/*
+#include<stdio.h>
+struct date    //non primitive(user defined) data types define.  
+{
+    int d,m,y;// No memory is consumed for definition of structure. 
+};
+
+void main()
+{
+    float x;
+    struct date today,d1;//(data declaration)date is data types and today is variables,use struct is rule.
+    today.d=15;
+    today.m=7;
+    today.y=2002;
+    d1=today;
+    printf("date is: %d/%d/%d\n",d1);
+    printf("enter today's date using slash(/):");
+    scanf("%d/%d/%d",&d1.d,&d1.m,&d1.y);
+    printf("date is:%d/%d/%d\n",d1.d,d1.m,d1.y);
+}*/
+
+        //programm for library management system.
+
+/* 
+#include<stdio.h>       
+struct book            // user-defined data types define.
+{
+    int bookid;
+    char title[20];
+    float price;
+};
+
+struct book input()     // input fxn define.
+{
+    struct book b;
+    printf("enter book id , title and price:\n");
+    scanf("%d",&b.bookid);
+    fflush(stdin);   // fxn to denote input buffer and clear the buffer.
+    gets(b.title);
+    scanf("%f",&b.price);
+    return(b);
+}
+void display(struct book b)  //  display fxn define.
+{
+    printf("%d  %s  %f\n",b.bookid,b.title,b.price);
+}
+
+void main()
+{
+    struct book b1;
+    b1=input();
+    display(b1);
+}
+*/
+
+
+/*
+--> MA (Memory Allocation).
+
+1. SMA: Static Memory Allocation--> Deceleration statement k through jo bhi variable
+banatey hain wo SMA ka example hai, SMA eshliye bola jata hain kyunki jb compiler
+program ko compile karta hai tb compiler decide kr leta hai ki kis variable ko kitna 
+memory allocate karna hain ,lifetime etc. but declaration k time koi memory 
+allocatation nhi hoti hain sirf memory decide hota hain eshi ko SMA boltey hain.
+
+2. DMA: Dynamic Memory Allocation--> Eshka use tb kartey hain jb pta nhi rahta ki 
+kitna memory allocate karna hain aur eshme memory run time pr hi decide hota hain ki
+kitna memory chahiye aur tabhi memory allocate bhi hota hain. 
+>malloc(x) --> x ka jitna value likh denge utne bytes ka memory block allocate ho 
+        jayega aur,malloc address return karta hain ush block ka jishko abhi
+        memory allocate hua hai and, malloc me by default garbage value rahta hai.
+>calloc(x,y)--> Ye bhi address return karta hai aur, x number of block is formed of
+        y bytes. malloc me single argument pass kr saktey hain but calloc me two
+        arguments pass kr saktey hain aur,calloc me by default 0 value rahta hain.
+>realloc() -> fxn used to change variables size,
+              of that variables which made from malloc and calloc.  
+>free() ->  fxn used to release that memory which is formed from
+            malloc and calloc. 
+
+--> union ->  is similar to struct but memory allocate singly, in which we store 
+              any data type like int,char, float etc but store one at a time and due
+              to this singly memory allocation we access one variable of union at 
+              a time so, union used earlier nowadays not bcoz memory is cheap.   
+        union used in low level language but struct used in high level language. 
+
+--> Enumerators -> same as structure and union , that is used to make the user 
+        defined data types and there syntexes are also similar.
+*/
+
+
+//         Program to find sum using (malloc) fxn..
+/*
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n,i,*ptr,sum=0;
+    printf("Enter number of elements:");
+    scanf("%d",&n);
+    ptr=(int*)malloc(n*sizeof(int));
+    if(ptr==NULL)
+    {
+        printf("Sorry..!! to allocate memory\n");
+        exit(0);
+    }
+    printf("Enter element of array:");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",ptr+i);
+        sum+=*(ptr+i);
+    }
+    printf("Sum = %d",sum);
+    free(ptr);
+    return 0;
+}
+*/
+
+
+
+       
+              // static and dynamic memory allocation and their fxns.
+/*
+#include<stdio.h>
+#include<stdlib.h>
+void main()
+{
+    int a=5;       //SMA(static memory aallocation)
+    float b=10;    //SMA
+    int x[20];     //SMA
+    x[5]=16;
+    float *p;
+    if(1);
+    p=(float*)malloc(4); //malloc(4) fxn forms a block of 4 bytes. {DMA}
+                        //{malloc me by default garbage value rahta hain.}
+    *p=3.14; 
+    printf("%d\n%f\n%d\n%f\n",a,b,x[5],*p);
+
+
+    int *ptr;
+    ptr=calloc(5,2);//calloc fxn forms 5 blocks of 2,2 bytes. {DMA}
+                    //{calloc me by default 0 value rahta hain.}
+    *(ptr+0)=20;
+    *(ptr+1)=12;
+    *(ptr+2)=13;
+    *(ptr+3)=14;
+    *(ptr+4)=15;
+    printf("%d  %d  %d  %d  %d\n",*(ptr+1),*(ptr+2),*(ptr+3),*(ptr+4),*(ptr+0)); 
+    
+}
+*/
+
+     // Uses of union..
+
+/*
+union item              // formation of data types.
+{
+    int x;
+    float y;
+    char z; 
+};
+void main()
+{
+    union item i1;
+    i1.x=5;
+    printf("%d\n",i1.x);
+    i1.y=1.5;
+    printf("%f\n",i1.y);
+    i1.z='g';
+    printf("%c\n",i1.z);
+}
+*/
+
+
+                    // uses of enumerators.
+
+/*
+#include<stdio.h>
+enum boolean
+{
+    false,true
+};
+
+enum boolean iseven(int x)
+{
+    if(x/2==0)
+    return(true);
+    else
+    return(false);
+}
+void main()
+{
+    int n;
+    enum boolean result;
+    printf("enter a number:");
+    scanf("%d",&n);
+    result=iseven(n);
+    if(result==true)
+    printf("number is even.\n");
+    else
+    printf("number is odd.\n");
+}
+*/
+
