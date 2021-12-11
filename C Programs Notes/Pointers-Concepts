@@ -1,0 +1,319 @@
+               // study about pointers.
+               
+/*
+1. Basics of pointer.
+2. Extended concepts of pointer.
+3. Pointer's Arithmetic.
+4. Applications of pointers.
+
+1. --> Basics of pointers.
+
+Address of operator-
+1. It is an unary operator. 
+2. & is known as address of operator and also referencing operator.
+3. & operator gives address number of variable.
+4. &x here x is called operand and it must be name of variable.
+
+Indirection operator-
+1. It is an unary operator.
+2. * is indirection operator and also known as dereferencing operator.
+3. * returns the content whose address is its argument.
+
+&x=5; -> error.  bcoz, we can not store anything in &x as &x is not a variable,
+         it is the way to represent address of block x but,
+j=&x; -> not error. bcoz, we can store address in another variable, but j has to be
+         declared in special way (ie, int *j) before use. here,
+1. *j is not an ordinary variable like any other integer variable.
+2. *j is variable which contains the address of another variables.          
+3. ie, *j is called the pointer variable and it always contains 2 bytes in memory.
+4. Base Address: variable k pahle byte k addresss ko base address boltey hain,
+   pointer ka data types pointer k size pr asar nahi dalta lekin ush pointer me 
+   kis tarah k variable ka address assign ho sakta esh pr jarrur asar dalta hain.
+   jaise, yadi pointer variables float data types k madad se bana hai to wo only 
+   float variables ka hi address contains kar sakta hain kyunki pointer jis types 
+   ka hota hai wo ushi types k block ko point karta hain. 
+Note:
+    1. *j is equal to variable(x) whose address contain by j (ie,j=&x).        
+    2. *&x is equal to j ie, * and & cancel to each other. 
+FOR VERIFICATION OF THESE TWO NOTES SEE SECOND BELOW PROGRAM.
+
+2. --> Extended concepts of pointers.
+->   addresses of address--> *p , **q , ***r.
+->   *p is one lavel of pointer.
+->   **q is two level of address that contains address of only two level's address.
+->   ***r is three level of ponter(read as r is a pointer, to the pointer, to the
+     pointer that points the .... block).
+
+3. --> Pointer's Arithmetic.
+-> we can't add, multiply or divide two addresses(subtraction is possible).
+-> we can not multiply an integer to an address and similarly we cannot divide
+   an address with an integer value.
+-> we can add or subtract integer to/from an address.
+   Pointer+n=pointer+sizeof(type of pointer ie, int,char or float etc)*n.
+-> we can subtract two addresses of same type.
+   Pointer1-Pointer2=literal subtraction/sizeof(type of pointer).   
+
+4. --> Application of Pointers.
+(i) Uses of pointers in fxn.
+-> call by value.
+-> call by reference.
+(ii) uses of pointers in array.
+(iii) uses of pointers in string.
+*/
+
+// Program to reverse the element of an array.
+/*
+#include<stdio.h>
+void main()
+{
+    int a[10]={1,2,3,4,5,6,7,8,9,10},i,*p;
+    for(i=0;i<10;i++)
+    {
+        p = &a[9-i];
+        printf("%d ",*p);
+        
+    }
+}
+*/
+
+// Program to reverse the element of an array without pointer.
+/*
+#include<stdio.h>
+void main()
+{
+    int a[]={1,2,3,4,5,6,7,8,9,10},b[10],i;
+    for(i=0;i<10;i++)
+    {
+        b[i]=a[9-i];
+        printf("%d ",b[i]);
+    }
+}
+*/
+
+
+// Program to find greatest and smallest number in an aray.
+/*
+#include<stdio.h>
+void main()
+{
+    int i,j,a[10]={1,5,3,2,8,5,11,45,6,10},s;
+    for(i=0;i<10;++i)
+    {
+        j=i=a[0];
+        for(i=1;i<10;++i)
+        {
+            if(a[i]>j)
+            j=a[i];
+            if(a[i]<s)
+            s=a[i];
+        }
+        printf("smallest number is %d\n",s);
+        printf("largest number is %d\n",j);
+    }
+}
+*/
+
+
+// programm to find address of a number and vice-versa.  
+/*
+#include<stdio.h> 
+void main()
+{
+    int i ;
+    printf("enter a number:");
+    scanf("%d",&i);
+    printf("address of %d is %u\n",i,&i);
+    printf("content stored in above address is %d",*&i);
+}
+*/
+
+     //  Pointer's concepts in this program.
+/*
+#include<stdio.h>
+void main()          
+{
+    int x,y,*j;
+    printf("enter the number:\n");
+    scanf("%d %d",&x,&y);
+    j=&x;
+    printf("address of your numbers respectively is: %u %u\n",j,&y);
+    printf("*j is same as your first number ie, your number: %d\n",*j); // *j=x
+    printf("again address of your number is: %u\n",*&j); // *&j=j
+}
+*/
+
+                     // use of pointers in fxn.
+
+/*
+#include<stdio.h>
+void main()
+{
+    void goviswap(int*,int*);      //fxn declaration or prototypes.
+    int a,b;
+    printf("enter two numbers:");
+    scanf("%d%d",&a,&b);
+    goviswap(&a,&b);               //fxn calling(actual argument):call by reference.
+    printf("a=%d    b=%d\n",a,b);
+}
+void goviswap(int *x,int *y)       //fxn define(formal argument).
+{
+    int t;
+    t=*x;
+    *x=*y;
+    *y=t;
+}
+*/
+
+
+/*
+                     // uses of pointers in array.
+#include<stdio.h>
+void main()
+{
+    int i,a[5],*p;
+    p=&a[0];
+    for(i=0;i<=4;i++)
+    scanf("%d",p+i);   //p+i k jagah pr &a[i] bhi likh saktey hain.
+    for(i=0;i<=4;i++)
+    printf("%d     ",*(p+i));  //*(p+i) k jahah pr a[i] bhi likh saktey hain.
+}*/
+
+
+
+/*
+#include<stdio.h>
+void ginput(int*);
+void gdisplay(int*);
+void gsort(int*);
+void main()
+{
+    int a[5];
+    printf("enter five numbers:\n");
+    ginput(a);
+    gdisplay(a);
+    printf("after sort five numbers are:\n");
+    gsort(a);
+    gdisplay(a);
+}
+void ginput(int *p)
+{
+    int i;
+    for(i=0;i<=4;i++)
+    scanf("%d",p+i);
+}
+void gdisplay(int *p)
+{
+    int i;
+    for(i=0;i<=4;i++)
+    printf("%d   ",*(p+i));
+    printf("\n");
+}
+void gsort(int *p)       // fxn for sorting in increasing order.
+{                        //bubble sort logic used here.
+    int round,t,i; 
+    for(round=0;round<=4;round++)      
+    {
+        for(i=0;i<=4-round;i++)
+        if(*(p+i) > *(p+i+1))
+        {
+            t=*(p+i);    //*(p+i) k jagah pr a[i] likh saktey hain.
+            *(p+i)=*(p+i+1);
+            *(p+i+1)=t;
+        }
+    }
+}
+*/
+
+
+/*
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+    char g[15]="computer";
+    printf(g);
+//    strlen(g);  // fxn for lenth of string.
+//    strrev(g);  // fxn for reverse.
+//    strlwr(g);  // fxn to change in lower case which is in upper case.
+//    strupr(g);  // fxn to change in upper case which is in lower case.
+//    strcpy(g,"govind");    //fxn to copy string.
+//    strcmp(g);  // fxn to compare two strings and returns the aascii code of first mismatch character..
+//    strcat(g);  // fxn to catecanate the string.
+}
+*/
+
+                // uses of pointer in strings.
+
+             // programm to swap (reverse) the string.   
+/*
+#include<stdio.h>
+char* reverse(char*);
+int main()
+{
+    printf("%s",reverse("computer"));
+    return 0;
+}
+char* reverse(char *p)
+{
+    int l,i;
+    char ch;
+    for(l=0;*(p+l)!='\0';l++);
+    for(i=0;i<l/2;i++)
+    {
+        ch=*(p+i);
+        *(p+i)=*(p+l-1-i);
+        *(p+l-1-i)=ch;
+    }
+    return(p);
+}
+*/
+
+
+/*
+#include<stdio.h>
+int main()
+{
+    int* pc,c;
+    c=20;
+    printf("address of c : %p\n",&c);
+    printf("value of c : %d\n\n",c);
+    pc=&c;
+    printf("address of pointer pc:%p\n",pc);
+    printf("content of pointer pc:%d\n\n",*pc);
+    return 0;
+}
+*/
+
+/*
+#include<stdio.h>
+#include<string.h>
+struct student_college_dtails
+{
+    int college_id;
+    char college_name[30];
+};
+struct student_detail
+{
+    int id;
+    char name[10];
+    float percentage;
+
+    struct student_college_detail clg_data;
+}stu_data, *stu_data_ptr;
+
+int main()
+{
+    struct student_detail stu_data ={2,"Govind",92.5,31145,"xyz University"}
+    stu_data_ptr = &stu_data;
+    printf("Id is: %d\n",stu_data_ptr->id);
+    printf("Name is: %s\n",stu_data_ptr->name);
+    printf("Percentage is: %f\n\n",stu_data_ptr->percentage);
+    printf("College Id is: %d\n",stu_data_ptr->clg_data.college_id);
+    printf("College Name is: %s\n",stu_data_ptr->clg_data.college_name);
+    return(0);
+}
+*/
+
+
+
+
