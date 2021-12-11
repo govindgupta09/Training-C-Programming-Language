@@ -217,3 +217,79 @@ void main()
 }
 */
 
+
+        // Preprocessor, Storage class and File handling.
+        
+/*
+-->>Preprocessor= It is a program which performs before the compilaton.
+# is called pre-processor directive & word after that called pre-processor command.
+examples-- #include<stdio.h> (stdio.h is called MACRO), #undef, #define etc.
+#if, #else, #elif, #endif -->You can use these commands to use certain lines of 
+code to be included or not included(for compilation).
+
+-->> Storage class types and its properties-
+Properties of storage class:-
+(i).Default value.
+(ii).Memory location.
+(iii).Scope.
+(iv).Life time.
+
+Four types of storage class:-
+1.Automatic storage class(auto):-
+(i)Default value = garbage value.
+(ii)Memory location = RAM.
+(iii)Scope = within the block.
+(iv)Life time = till control remain in the block.
+
+2.Register storage class(register):-
+(i)Default value = garbage value.
+(ii)Memory location = CPU register.
+(iii)Scope = within block.
+(iv)Life time = till conrol remain in the block.
+
+3.Static storage class(static):-
+(i)Default value = zero.
+(ii)Memory location = RAM.
+(iii)Scope = within the block but value persists b/w the fxn call.
+(iv)Life time = till programs terminate.
+
+4.External storage class(extern):-
+(i)Default value = zero.
+(ii)Memory location = RAM.
+(iii)Scope = within whole programs (global).
+(iv)Life time = till programs terminates.
+
+-->> Why file handling?
+1.Data - raw matter.
+2.Data persisitence- data existence.
+3.File.
+4.File handling -> If same data is to be processed again and again at some later stage,
+                again we have to enter it (File se data nikalana aur file me data 
+                rakhna hi file handling kahlata hain).
+
+-->> File opening modes.
+r(read)->only reading,not create file if not exists.
+w(write)->only writing,creating file if not exists and erase the old contents.
+a(append)->only writing,creating file if not exists and not erase the old content and
+           write from end of file.
+r+(reading+writing)->it is used for modifying the contents.
+w+(reading+writing)->R+W and same as w.
+a+(reading+append)-> R+W and same as a.
+
+-->> File handling functions.
+1.fopen():syntex=>fopen("file_name","mode");
+2.fclose():syntex=>fclose(file_name);
+3.fgets():syntex=>fgets(str,n,fp);    {It returns NULL value at EOF}
+4.fputs():syntex=>fputs(str,fp);
+5.fgetc():both 5,6 is same as 3,4 but c is used for character to character value
+6.fputc():while s is used for string value.
+7.fread():syntex=>int fread(void*Buffer,int size,int count,FILE*ptr);
+8.fwrite():syntex=>int fwrite(void*Buffer,int size,int count,FILE*ptr);
+9.fprintf():syntex=>int fprintf(FILE*stream,const char*Format[argument,....]);
+10.fscanf();syntex=>int fscanf(FILE*stream,const char*Format,....);
+
+-->>Reading from files means:-Extracting data from a file to our program variables,
+                              this will not remove data from the file.
+           
+*/
+
