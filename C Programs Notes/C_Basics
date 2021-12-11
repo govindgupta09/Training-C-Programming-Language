@@ -1,0 +1,175 @@
+//    Basics of c language.
+
+
+/*
+identfiers ->smallest identifying unit in programm. ie const, variables,keywords. 
+constant-any number or character that acts as constants.
+variables-(names of memory location to store data) alphabet ,digit and underscore.
+keywords-predefined words or reserved words ie, int,float,if,else,double,do,while,etc.
+
+data types-> keywords ie, int, char, float, double, void and user defined.
+
+printf(),scanf() and gotoxy() is not a keywords but it is predefined functon.
+used for input and output instructions.
+
+operators->arithemetic instructions ie, +, -, *, /, %, etc.
+Unary > Arithmetic > Bitwise > Relational > Logical > Conditional > Assignment > comma.
+Unary -> +, -, ++, --, sizeof() ie, here + ,-, ++, -- not act as addition but as
+        symbol positive, negative, preincrement, predecrement, sizeof(float).
+Arithmetic -> (L to R) *, /, %, +, -.
+Bitwise -> &, |, ^, ~, >>, <<. 
+Relational ->   <, >, <=, >=, ==, !=.
+Logical ->  (not) ! , && , ||  .
+Conditional ->Ternary operator (condition?statement:statement) compact form of if else.
+
+Tokens:- In a c programming the basic elememt recognised by the compiler in a 
+meaningful manner is called tokens.
+There are six types of tokens in c programming.
+1.Identifiers.
+2.Keywords.
+3.Constants.
+4.Operators.
+5.String literals.
+6.Other seperators like => ;(semicolon), c(comma), ()(closed braces) etc.
+THE number of tokens is 10 in below program.        
+{
+    printf("i=%d,&i=%x",&i==&i);
+}
+
+Typecasting => conversion of one data types to other data types.
+Implict -> compiler itself converts (lower to higher data types).
+Explicit -> programmers converts this (lower to higher and vice versa).
+*/
+
+
+/*
+#include<stdio.h>
+void main()
+{
+    int a=3,b=2;
+    float x,y;
+    x=a/b;
+    printf("%f\n",x); // x=1.000000
+    y=(float)a/b;
+    printf("%f",y);   // y=1.500000
+}
+*/
+
+
+/*
+// Checking Precedence of Operators..
+#include<stdio.h>
+void  main()
+{
+    int i=10;
+    printf("%d\n",i);
+    printf("%d %d %d %d %d",i++,++i,++i,i++,++i);
+    printf("\n%d",i);
+}
+*/
+
+
+
+/*
+// Uses Of Operators..
+#include<stdio.h>
+void main()
+
+{   
+    int a,b,c ;
+    printf(" enter number :\n");
+    scanf("%d",&a);
+    printf("enter a number b:\n");
+    scanf("%d",&b);
+    printf("the sum is %d\n",a+b);
+
+    printf("a+b=%d\n", a+b);
+    printf("a*b=%d\n",a*b);
+    printf("a/b=%f\n",a/b);
+    printf("a-b=%d\n",a-b);
+    
+//  printf("a%b=%d\n",a%b); //% means remainder after division.
+    
+    c=a%b;
+    printf("remainder when a divided by b is:%d\n",c);
+    
+}
+*/
+
+
+
+/*
+// Uses of Operators..
+#include<stdio.h>
+int main()
+{
+    int a,c  ;
+    float b;
+    a=30;
+    b=6.5;
+    printf("a+b=%f\n",a+b);
+    printf("a-b=%f\n",a-b);
+    printf("a*b=%f\n",a*b);
+    printf("a/b=%f\n",a/b);
+    c=a/b;
+    printf("remainder is:%f\n",c);
+    return 0;
+}
+*/
+
+
+
+/*
+// Checking of initialised Constants..
+#include<stdio.h>
+int main()
+{
+    int a=8;
+    const float pi=3.14;
+    printf("hello wold!/n");
+    printf("govindgupta.com\n");
+    printf("the value of a is %d and the value of pi is %f\n",a ,pi);
+    return 0;
+}
+*/
+
+
+
+/*
+// Uses the sizeof Operators..
+#include<stdio.h>
+#include<limits.h>
+long double main()
+{
+    printf("storage size of int is %d\n",sizeof(long double));
+    return 0;
+}
+*/
+
+
+
+/*
+#include<stdio.h>
+#include<float.h>
+int main()
+{
+    printf("storage size of float :%d\n",sizeof(float));
+    printf("minimum float positive value :%E\n",FLT_MIN);
+    printf("maximum float positive value :%E\n",FLT_MAX);
+    printf("pricision value : %d\n",FLT_DIG);
+    return 0;
+}
+*/
+
+
+
+/*
+// Check Typecasting..
+#include<stdio.h>
+int main ()
+{
+	int a=10.0;
+	float b=5.5;
+	printf("the value of a/b is:%f",a/b);
+}
+*/
