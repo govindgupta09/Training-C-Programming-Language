@@ -1,0 +1,179 @@
+                    // study about array and string.
+
+/*
+Array:- it is linear collection of similar elements (ie. of same data types).
+        it is also known as subscript variable. 
+        array is group of variables.
+
+        int a[10];                  -> index number-0,1,2,3,4,5,6,7,8,9.
+        int a[];                    ->  error.
+        int a[5];                   ->  automatically garbage value in index.
+        int a[5]={2,4,5,3,2};       ->  not error.
+        int a[]={2,4,5,3,2};        ->  not error.
+        int a[5]={2,4,2,3,6,4,2};   ->  no error but warning shows.
+        int a[5]={5,6,4};           ->  other index filled with 0.
+        int b[2][3];                ->  2D array.
+
+String:- sequence of characters terminated at null character.
+         ASCII code of null character is zero. 
+
+String related functions-
+     strlen(g);  // fxn for lenth of string.
+     strrev(g);  // fxn for reverse.
+     strlwr(g);  // fxn to change in lower case which is in upper case.
+     strupr(g);  // fxn to change in upper case which is in lower case.
+     strcpy(g,"govind");    //fxn to copy string.
+     strcmp(g);  // fxn to compare two strings and returns the ASCII code of first mismatch character.
+     strcat(g);  // fxn to catecanate the string.
+
+*/
+
+/*
+#include<stdio.h>
+void main()
+{
+    int a[10],i,sum=0;        //variable name[index number]; 
+    float avg;    
+    printf("enter 10 numbers");
+    for(i=0;i<=9;i++)
+    scanf("%d",&a[i]);
+    for(i=0;i<=9;i++)
+    sum=sum+a[i];
+    printf("sum is %d\n",sum);
+    avg=sum/10.0;
+    printf("average is %f\n",avg);
+}
+*/
+
+       // formation of matrix using 2D array.
+
+/* 
+#include<stdio.h>
+void main()      
+{
+    int a[3][3],b[3][3], c[3][3],i,j;
+    printf("enter 9 numbers for first matrix:\n");
+    for(i=0;i<=2;i++)
+        {
+            for(j=0;j<=2;j++)
+            {
+                scanf("%d",&a[i][j]);
+            }
+            printf("\n");
+        }
+        printf("enter 9 numbers for second matrix:\n");
+    for(i=0;i<=2;i++)
+    for(j=0;j<=2;j++)
+    scanf("%d",&b[i][j]);
+
+    printf("your matrix after sum is:\n");
+
+    for(i=0;i<=2;i++)
+    {
+        for(j=0;j<=2;j++)
+        {
+            c[i][j]=a[i][j]+b[i][j]; 
+            printf("    %d    ",c[i][j]);
+        }
+        printf("\n");
+    }  
+}
+*/
+
+                    // strings.
+
+/*
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char s[10];
+    printf("enter the string:");
+    scanf("%s",s);
+    printf("your typed string is : %s",s);
+    return(0);
+}    
+*/                
+
+/*  
+#include<stdio.h>
+void main()    
+{
+    char g[20]="govind";        // {'g','o','v','i','n','d','\0'};  
+ //    int i;
+
+ /*  for(i=0;g[i]!='\0';i++)
+    printf("%c",g[i]);
+ */
+
+
+ //  printf("%s",g);        // %s for string.
+       
+
+ /*  printf("enter your name:");
+    gets(g);   // scanf("%s",g); // g k jagah pr &g[0] bhi likh saktey hain.
+ */
+
+  /* puts(g);  //g k jagah pr &s[0]bhi likh saktey , print the string,
+        but autometically have new line character.
+  */          
+//}*/
+
+
+    
+/*
+#include<stdio.h>
+void main()
+{
+    char s[3][10];
+    int i;
+    printf("enter three strings\n");
+    
+    for(i=0;i<=2;i++)
+    gets(&s[i][0]);       //gets(s[i]);
+
+    for(i=0;i<=2;i++)
+    printf("%s\n",s[i]);
+}
+*/
+
+/*
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+    char s[6]="govind";
+    int i=0;
+    int count = 0;
+    while(i<6)
+    {
+        if(s[i]=='a' || s[i]=='e' || s[i]=='i' || s[i]=='o' || s[i]=='u')
+        {
+            count++;
+        }
+        i++;
+    }
+    printf("the number of vowels is :%d ",count);
+}
+*/
+
+/*
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+    char s[6]="govind";
+    int i=0;
+    int count = 0;
+    while(s[i] = NULL)
+    {
+        if(s[i]=='a' || s[i]=='e' || s[i]=='i' || s[i]=='o' || s[i]=='u')
+        {
+            count++;
+        }
+        i++;
+    }
+    printf("the number of vowels is :%d ",count);
+}
+*/
+
