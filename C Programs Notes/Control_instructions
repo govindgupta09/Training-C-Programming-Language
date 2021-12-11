@@ -1,0 +1,73 @@
+//      Conditional statements ie, control instructions.
+
+/*
+There is four types-
+1. dicision control instruction-->
+                 if
+                 nested if
+                 if else
+                 nested if else
+                 if elseif ladder
+                 conditional operator (?:)(ternary operator).
+
+2. iterative(repeatative) control instruction--> (Loops)
+                 while
+                 do while
+                 for
+
+3. switch case control instruction-->(syntex)
+        switch(expression)
+        {
+            case constant:code;break;
+            case constant:code;break;
+            case constant:code;break;
+            default:code;
+        }
+4. goto control instruction-->
+*/
+
+
+/*  
+iterative(repeatative) control instructons(Loops)
+         while(T/F)--(entry control)
+         do while--(exit contrl)
+         for--(initialization;condition;updation )
+         for--(expression-1;expression-2;expression-3)
+
+for( ; ; ) => for loop may be empty , then called infinite loop, but
+              while loop should never be empty.         
+*/
+
+
+/*    break;
+     the keyword break can be used only in loop body or in switch body.
+     the purpose of break is to terminate the loop's excution immediatly.
+*/
+
+
+/*
+switch case control instruction-->(syntex)
+
+        switch(expression)
+        {
+            case constant:code;break;
+            case constant:code;break;
+            case constant:code;break;
+            default:code;
+        }
+
+Note:
+1-
+ switch(expression) ye expression if else aur loops me T/F ki tarah evaluate 
+hota hain but switch k expression me T/F ki tarah nhi balki simply result ki tarah
+hoga aur ye result constant k equal hoga aur default tb chalega jb koi bhi case 
+expression k result se satisfied nhi hoga aur yh expression constant ya variable
+bhi ho sakta hain.
+2-
+ case ke aage variable ya expresion nhi likh saktey, sirf constant likh saktey hai
+aur constant may be integer or character but not real number means not point value.
+3- 
+case ko kisi bhi order me likh saktey hain but ydi default ko bich me likhtey 
+hain to default k bad bhi break; keyword lagana padega eshliye default ko last me 
+likhtey hain. waise hume serial nu. se likhne ka aadat dalna chahiye.
+*/
