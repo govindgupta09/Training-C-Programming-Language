@@ -1,0 +1,268 @@
+                // functions and recursion.
+
+/*
+Any program have at least one fxn ie. main() and main fxn ko operating sysytem call
+karta hai na ki compiler.
+
+Uses and benefits of functions:-
+1. better memory utilisation.
+2. program must have at least one fxn (ie, main()).
+3. fxn names must be unique.
+4. easy to read, modify, debug(testing).
+5. avoids rewriting of same code over and over.
+
+Recurson:- fxn callling itself is called recursion.
+           recursion me ek base case  banana padta hai jha recursion end ho.
+*/       
+
+         // takes nothing returns nothing.
+
+/*
+#include<stdio.h>
+void main()
+{
+    void goviadd(void);      //user defined fxn declaration.
+    goviadd();               //user defined fxn calling.
+}
+void goviadd()               //user defined fxn.
+{
+    int a,b;  
+    printf("enter two numbers\n");
+    scanf("%d%d",&a,&b); 
+    printf("sum is %d\n",a+b);
+}
+*/
+
+
+
+           //takes something returns nothing.
+
+/*
+#include<stdio.h>
+void goviadd(int,int);       // global fxn declaration or fxn prototypes.
+void main()
+{
+    int x,y;
+                  // void goviadd(int,int);   //local fxn declaration.
+    printf("enter two numbers\n");
+    scanf("%d%d",&x,&y);
+    goviadd(x,y);                             //actual arguments : call by value.
+}
+void goviadd(int a,int b)                     //formal arguments.
+{
+    int c;                      // a aur b k jagah pr x aur y bhi likh saktey hai.
+    c=a+b;
+    printf("sum is %d\n",c);
+}*/           
+
+
+
+     //takes nothing returns something.
+
+/*
+#include<stdio.h>
+void main()
+{
+    int s;
+    int goviadd(void);      //local fxn declaration.
+    s=goviadd();
+    printf("sum is %d\n",s);
+}
+int goviadd()               //user defined fxn.
+{
+    int a,b,c;  
+    printf("enter two numbers\n");
+    scanf("%d%d",&a,&b);
+    c=a+b; 
+    return c; // c k jagah (a+b) likh saktey h.
+} */
+
+
+            //takes something return something.
+ 
+/*
+#include<stdio.h>
+int goviadd(int,int);        //global fxn declaration.
+void main()
+{
+    int s,x,y;
+    printf("enter two numbers\n");
+    scanf("%d%d",&x,&y);
+    s=goviadd(x,y);
+    printf("sum is %d\n",s);
+}
+int goviadd(int a,int b)               //user defined fxn.
+{
+    int c;  
+    c=a+b; 
+    return c;
+}
+*/
+
+
+//     call by value
+
+/*
+#include<stdio.h>
+void goviswap(int,int);
+
+int main()
+{
+    int x=30, y=20;
+    printf("before swapping value is : x=%d & y=%d\n",x,y);
+    goviswap(x,y);
+    printf("after swaping value is : x=%d & y=%d\n",x,y);
+    return(0);
+}
+
+void goviswap(int a,int b)
+{
+    int temp;
+    temp=a;
+    a=b;
+    b=temp;
+}
+*/
+
+//                            call by reference..
+
+/*
+#include<stdio.h>
+void change(int*num)
+{
+    printf("before adding value inside fxn num=%d\n",*num);
+    (*num)+=100;
+    printf("after adding value inside fxn num=%d\n",*num);
+}
+int main()
+{
+    int x=100;
+    printf("Before function call x=%d\n",x);
+    change(&x);
+    printf("After fxn call x=%d\n",x);
+    return 0;
+}
+*/
+
+
+
+/*
+#include<stdio.h>
+void swap(int*,int*);
+int main()
+{
+    int a=40,b=30;
+    printf("before swapping the values in main fxn a=%d,b=%d\n",a,b);
+    swap(&a,&b);
+    printf("after swapping values in main fxn a=%d,b=%d\n",a,b);
+}
+void swap(int*a,int*b)
+{
+    int temp;
+    temp=*a;
+    *a=*b;
+    *b=temp;
+    printf("After swapping values in fxn a=%d,b=%d\n",*a,*b);
+}
+*/
+
+/*
+#include<stdio.h>
+void add(int*,int*);
+int main()
+{
+    int a=15,b=10;
+    add(&a,&b);
+    return(0);
+}
+
+void add(int*x,int*y)
+{
+    int add;
+    add=*x+*y;
+    printf("sum of your number is :%d",add);
+}
+*/
+
+              //recursion (fxn k andar fxn call.)
+
+    /*  sum(n)=n+sum(n-1)       ->         sum(n-1)=(n-1)+sum(n-2)
+        sum(n-2)=(n-2)+sum(n-3) ->  .............  sum(1)=m+sum(1)
+    */
+
+                    // factorial finding programm.
+/*
+#include<stdio.h>
+void main()
+{
+    int k,a,b;
+    while(1)
+    {
+    int govisum(int);
+    printf("Enter the last natural number to where you want sum:");
+    scanf("%d",&a);
+    k=govisum(a);
+    printf("factorial value is :%d\n",k);
+    }
+}         
+int govisum(int a)
+{
+    int s;
+    if(a==1)          // here base case is used(see above).
+    return(a);
+    s=a+govisum(a-1);
+    return(s);
+}
+*/
+
+
+
+//       Maths functions and their header files..
+
+/*
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    printf("\n%f",ceil(2.6));
+    printf("\n%f",ceil(1.5));
+    printf("\n%f",ceil(1.2));
+    printf("\n%f",ceil(1.7));
+    printf("\n%f",ceil(3));
+    printf("\n%f",ceil(5));
+    printf("\n%f",ceil(2.3));
+
+    printf("\n");
+
+    printf("\n%f",floor(4.6));
+    printf("\n%f",floor(5));
+    printf("\n%f",floor(5.3));
+    printf("\n%f",floor(5.7));
+    printf("\n%f",floor(8));
+    printf("\n%f",floor(0));
+
+    printf("\n");
+
+    printf("\n%f",sqrt(36));
+    printf("\n%f",sqrt(15));
+    printf("\n%f",sqrt(19));
+    printf("\n%f",sqrt(225));
+    printf("\n%f",sqrt(625));
+
+    printf("\n");
+
+    printf("\n%f",pow(3,4));
+    printf("\n%f",pow(3,3));
+    printf("\n%f",pow(3,1.5));
+    printf("\n%f",pow(2,2.5));
+
+    printf("\n");
+
+    printf("\n%d",abs(-15));     // absolute.
+    printf("\n%d",abs(-20));
+    printf("\n%d",abs(-11.5));
+    printf("\n%f",abs(-11.5));
+
+    return(0);
+}
+*/
