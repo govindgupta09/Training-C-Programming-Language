@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{
+    float cp,sp,pf,ls;
+    printf("enter CP & SP respectively:\n");
+    scanf("%f%f",&cp,&sp);
+    pf=sp-cp;
+    ls=cp-sp;
+    if(sp>cp)
+    {
+        printf("profit of rupee %f \n",pf);
+        printf("profit percentage is %f %%",pf*100/cp);
+    }
+    else
+    {
+        printf("loss of rupee %f \n",ls);
+        printf("loss percentsge is %f %%",ls*100/cp);
+    }
+    return 0;
+}
