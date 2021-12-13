@@ -1,0 +1,19 @@
+// This loop normally runs 5 times.
+
+#include<stdio.h>
+int main()
+{
+    int i=1,x;
+    while(i<=5)
+    {
+        printf("enter the password (hint:negative numbers):\n");
+        scanf("%d",&x);
+        if(x<0)
+        {
+            break;
+        }
+        i++;
+    }
+    i==6?printf("wrong password several times."):printf("correct password-Welcome");
+    return(0);
+}
