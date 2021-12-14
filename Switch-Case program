@@ -1,0 +1,43 @@
+// use of switch-case and break.
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int choice,a,b,c;
+    while(1)
+    {
+    printf("\nEnter 1. for addition.");
+    printf("\nenter 2. for odd-even.");
+    printf("\nenter 3. for printing n numbers.");
+    printf("\nenter 4. for exit.\n");
+    scanf("%d",&choice);
+    switch(choice)
+    {
+        case 1:
+        printf("enter two numbers\n");
+        scanf("%d%d",&a,&b);
+        c=a+b;
+        printf("sum is:%d\n",c);
+        break;
+        case 2:
+        printf("enter a number\n");
+        scanf("%d",&a);
+        if(a%2==0)
+        printf("number is even\n");
+        else
+        printf("number is odd\n");
+        break;
+        case 3:
+        printf("enter  number\n");
+        scanf("%d",&a);
+        for(b=1;b<=a;b++)
+        printf("%d  ",b);
+        break;
+        case 4: exit(0);
+        default:
+        printf("invalid choice\n");   
+    }
+    }
+    return 0;
+}
