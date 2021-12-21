@@ -1,0 +1,11 @@
+// programm to find address of a number and vice-versa.  
+
+#include<stdio.h> 
+void main()
+{
+    int i ;
+    printf("enter a number:");
+    scanf("%d",&i);
+    printf("address of %d is %u\n",i,&i);
+    printf("content stored in above address is %d",*&i);
+}
