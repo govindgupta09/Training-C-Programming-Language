@@ -1,0 +1,31 @@
+//programm for library management system.
+ 
+#include<stdio.h>       
+struct book            // user-defined data types define.
+{
+    int bookid;
+    char title[20];
+    float price;
+};
+
+struct book input()     // input fxn define.
+{
+    struct book b;
+    printf("enter book id , title and price:\n");
+    scanf("%d",&b.bookid);
+    fflush(stdin);   // fxn to denote input buffer and clear the buffer.
+    gets(b.title);
+    scanf("%f",&b.price);
+    return(b);
+}
+void display(struct book b)  //  display fxn define.
+{
+    printf("%d  %s  %f\n",b.bookid,b.title,b.price);
+}
+
+void main()
+{
+    struct book b1;
+    b1=input();
+    display(b1);
+}
