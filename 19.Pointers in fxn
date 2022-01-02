@@ -1,0 +1,19 @@
+// use of pointers in fxn.
+
+#include<stdio.h>
+void main()
+{
+    void goviswap(int*,int*);      //fxn declaration or prototypes.
+    int a,b;
+    printf("enter two numbers:");
+    scanf("%d%d",&a,&b);
+    goviswap(&a,&b);               //fxn calling(actual argument):call by reference.
+    printf("a=%d    b=%d\n",a,b);
+}
+void goviswap(int *x,int *y)       //fxn define(formal argument).
+{
+    int t;
+    t=*x;
+    *x=*y;
+    *y=t;
+}
