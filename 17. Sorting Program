@@ -1,0 +1,43 @@
+//  Program of Sorting
+
+#include<stdio.h>
+void ginput(int*);
+void gdisplay(int*);
+void gsort(int*);
+void main()
+{
+    int a[5];
+    printf("enter five numbers:\n");
+    ginput(a);
+    gdisplay(a);
+    printf("after sort five numbers are:\n");
+    gsort(a);
+    gdisplay(a);
+}
+void ginput(int *p)
+{
+    int i;
+    for(i=0;i<=4;i++)
+    scanf("%d",p+i);
+}
+void gdisplay(int *p)
+{
+    int i;
+    for(i=0;i<=4;i++)
+    printf("%d   ",*(p+i));
+    printf("\n");
+}
+void gsort(int *p)       // fxn for sorting in increasing order.
+{                        //bubble sort logic used here.
+    int round,t,i; 
+    for(round=0;round<=4;round++)      
+    {
+        for(i=0;i<=4-round;i++)
+        if(*(p+i) > *(p+i+1))
+        {
+            t=*(p+i);    //*(p+i) k jagah pr a[i] likh saktey hain.
+            *(p+i)=*(p+i+1);
+            *(p+i+1)=t;
+        }
+    }
+}
