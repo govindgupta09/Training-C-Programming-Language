@@ -1,0 +1,18 @@
+//  Program to sum of firat and last digit.
+
+#include<stdio.h>
+int main()
+{
+    int num,fd,ld,sum=0;
+    printf("enter the number:");
+    scanf("%d",&num);
+    ld=num%10;
+    while(num>=10)
+    {
+    num=num/10;  //if we not use this bracket {} then also run.
+    }
+    fd=num;
+    sum=fd+ld;
+    printf("sum of first and last digit is:%d\n",sum);
+    return 0;
+}
