@@ -1,0 +1,30 @@
+// programm to add 1 to every digits of a number.
+
+#include<stdio.h>
+int main()
+{
+    int num,remainder,new_num=0;
+    void govifun(int);            //user defined fxn declaration.
+    printf("enter the number:");
+    scanf("%d",&num);
+    while(num)
+    {
+        remainder=num%10;
+        new_num=new_num*10+(remainder+1); 
+        num=num/10;       
+    }
+    printf("new number by increasing 1 to every digits:%d\n",new_num);
+    govifun(new_num);           //user defined fxn call.
+    return 0;
+}                               
+void govifun(int num)           // user defined function define.
+    {
+       int remainder,rev=0;
+       while(num!=0)
+       {
+         remainder=num%10;      // modulus(%) means remainder after division.
+         rev=rev*10+remainder;
+         num=num/10;            // num/=10;   
+       }
+        printf("final number by increment of 1 is:%d\n",rev);
+    }
