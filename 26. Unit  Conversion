@@ -11,3 +11,17 @@ int main()
     printf("the distance in meter is:%f,in cm is:%f,in inch is:%f,in feet is:%f"
     ,mt,cm,inch,ft);
     return 0;
+
+
+/*
+
+float frn,ctg,kelvin;
+    printf("Enter the temperature in centigrade:");
+    scanf("%f",&ctg);
+    frn=(9*ctg)/5+32;
+    kelvin=ctg+273.15;
+    printf("temp. in fahrenheit is:%f\n",frn);
+    printf("temp. in kelvin is:%f\n",kelvin);
+    return 0;
+    
+    */
