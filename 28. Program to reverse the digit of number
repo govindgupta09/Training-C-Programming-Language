@@ -1,0 +1,17 @@
+//Program to reverse the digit of number
+
+#include<stdio.h>
+int main()
+{   
+    int num,rev=0,remainder;
+    printf("enter the digits to reverse:");
+    scanf("%d",&num);
+    while(num!=0)
+    {
+     remainder=num%10;      // modulus(%) means remainder after division.
+     rev=rev*10+remainder;
+     num=num/10;            // num/=10;   
+    }
+    printf("reversed number is:%d\n",rev);
+    return 0;
+}
