@@ -1,0 +1,20 @@
+//Program to find number of notes of currency.
+
+#include<stdio.h>
+int main()
+{
+    int mny,nts;
+    printf("enter the money in hundreds:");
+    scanf("%d",&mny);
+    printf("which currency notes u wants\n");
+    scanf("%d",&nts); 
+    if(nts==10)
+    printf("nu. of 10 currency notes is:%d\n",mny/10);
+    else if(nts==50)
+    printf("nu. of 50 currncy notes is:%d\n",mny/50);
+    else if(nts==100)
+    printf("nu. of 100 currency ntes is:%d\n",mny/100);
+    else
+    printf("no suitable notes found.\n");
+    return 0;
+}
