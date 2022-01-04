@@ -1,0 +1,18 @@
+// Program to sum the digits of numbes..
+
+#include<stdio.h>
+int main()
+{
+    int x,y,sum=0,remainder;
+    printf("enter five digits number:");
+    scanf("%d",&x);
+    y=x;
+    while(y!=0)
+    {
+        remainder=y%10;
+        sum=sum+remainder;
+        y=y/10;
+    }
+    printf("sum of digits of number %d is:%d\n",x,sum);
+    return 0;
+}
