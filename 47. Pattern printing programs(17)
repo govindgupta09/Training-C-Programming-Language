@@ -1,0 +1,22 @@
+#include<stdio.h>
+void main()
+{
+    int i,j,m,n;
+    printf("enter the number of rows and column respectively:");
+    scanf("%d%d",&m,&n);
+    for(i=1;i<=m;i++)
+    {
+        for(j=1;j<=n;j++)
+        {
+            if(j<=i || j>=n+1-i)
+            {
+                printf("*");
+            }
+            else
+            {
+                printf(" ");  // only space..
+            }
+        }
+        printf("\n");
+    }
+}
